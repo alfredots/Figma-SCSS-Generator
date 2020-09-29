@@ -1,4 +1,7 @@
 import getPalette from './getPallete'
+import getFont from './getFont'
+import getBorder from './getBorder';
+
 const request = require("request");
 const secret = require('./secret');
 
@@ -22,12 +25,17 @@ request(options, function (error, response, body) {
           grids: {},
           spacers: {},
           colors: {},
-          fonts: {}
+          fonts: {},
+          borders: {}
       }
   };
 
   Object.assign(baseTokeensJSON.token.colors, getPalette(stylesArtboard));
+  Object.assign(baseTokeensJSON.token.fonts, getFont(stylesArtboard));
+  Object.assign(baseTokeensJSON.token.borders, getBorder(stylesArtboard));
   
+  console.log(baseTokeensJSON);
+
   const end = Date.now();
   const time = ((end - start)/1000).toFixed(2)
   console.log('Completed in:', time + 's')

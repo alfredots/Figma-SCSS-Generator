@@ -1,8 +1,6 @@
-import Color from './Color';
 import searchTree from './searchTree'
 
 function rgbToHex(data) {
-  console.log(data.fills[0])
   const rgbToInt = (value) => { return Math.round(value * 255) }
 
   const intToHex = (int) => { 
@@ -48,4 +46,5 @@ export default function (stylesArtboard) {
   }
 
   console.log(colorTokens)
+  return colorTokens
 }
