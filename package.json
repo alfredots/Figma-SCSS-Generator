@@ -4,14 +4,21 @@
   "description": "## Overview This tool allows a user to export a scss file containing all the font, gradient, and color variables for a given document. Functionality could be expanded to include standard button styles and general component styles.",
   "main": "main.js",
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
     "http": "^0.0.0",
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "jest": "^23.6.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "babel-node ./main.js"
   },
   "repository": {
     "type": "git",

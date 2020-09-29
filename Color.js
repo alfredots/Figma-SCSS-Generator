@@ -1,7 +1,6 @@
-class Color {
+export default class Color {
     constructor(data) {
         this.data = data;
-        this.name = data.name.replace(/\s+/g, '-').toLowerCase();
         if (data.fills && data.fills[0].type === 'SOLID') {
             this.rgba = {
                 r: this.rgbToInt(data.fills[0].color.r),
@@ -46,5 +45,3 @@ class Color {
         return "#"+red+green+blue;
     }
 }
-
-module.exports = Color;
